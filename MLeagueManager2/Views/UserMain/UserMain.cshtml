@@ -1,0 +1,40 @@
+﻿@using MLeagueManager2.Common;
+
+@{
+    ViewData["Title"] = "New User Main";
+}
+
+@model MUser;
+
+<div class="text-center">
+    <h1 class="display-4">Magic League Manager</h1>
+    <form>
+        <table class="table">
+            <thead>
+                Welcome it looks like you are not part of any leagues.  Click below to either create a new league or join an open league.
+            </thead>
+            <tr>
+                <td>
+                    <table class="table">
+                        <tr>
+                            <td class="text-center">Click here to join a new league.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><button type="button" onclick="location.href'@Url.Action("UserMain","UserMain")'" class="btn-primary">Join League</button></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="table">
+                        <tr>
+                            <td class="text-center">Click here to create a new league.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><button type="button" onclick="location.href='@Url.Action("CreateLeague","UserMain",Model)'" class="btn-primary">Create League</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

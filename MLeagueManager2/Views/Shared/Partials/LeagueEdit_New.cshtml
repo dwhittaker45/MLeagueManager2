@@ -1,0 +1,38 @@
+﻿@model MLeagueManager2.Common.NewLeague
+
+<h4>Create/Edit League</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LName" class="control-label"></label>
+                <input asp-for="LName" class="form-control" />
+                <span asp-validation-for="LName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LStart" class="control-label"></label>
+                <input asp-for="LStart" class="form-control" />
+                <span asp-validation-for="LStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LEnd" class="control-label"></label>
+                <input asp-for="LEnd" class="form-control" />
+                <span asp-validation-for="LEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SMax" class="control-label"></label>
+                <input asp-for="SMax" class="form-control" />
+                <span asp-validation-for="SMax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GPMax" class="control-label"></label>
+                <input asp-for="GPMax" class="form-control" />
+                <span asp-validation-for="GPMax" class="text-danger"></span>
+            </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

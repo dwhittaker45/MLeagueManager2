@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MLeagueManager2.Common\MLeagueManager2.Common.csproj" />
+    <ProjectReference Include="..\MLeagueManager2.Repo\MLeagueManager2.Repo.csproj" />
+    <ProjectReference Include="..\MLeagueManager2.Service\MLeagueManager2.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\LeagueHome\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+</Project>

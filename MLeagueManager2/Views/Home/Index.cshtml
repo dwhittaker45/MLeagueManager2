@@ -1,0 +1,39 @@
+﻿@using MLeagueManager2.Common;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model LoginModel
+
+<div class="text-center">
+    <h1 class="display-4">Magic League Manager</h1>
+    <p>Please Log In</p>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <br />
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="font: bold 13px arial">User Name:</td>
+                <td>@Html.TextBoxFor(model => model.uname)</td>
+            </tr>
+            <tr>
+                <td style="font: bold 13px arial">Password:</td>
+                <td>@Html.PasswordFor(model => model.pword, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="alert-warning">@if (ViewData["Error"].ToString() != "")
+                {
+                    @Html.Label(ViewData["Error"].ToString());
+                }</td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" id="btnLogin" class="btn-primary">Login</button> </td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.ActionLink("Not A User?  Click here to log in","CreateUser")</td>
+            </tr>
+        </table>
+    }
+</div>

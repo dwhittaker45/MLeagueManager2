@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using MLeagueManager2.Common
+
+@model CreateLeagueModel
+
+
+<h1 class="display-4">Magic League Manager</h1>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @*@Html.PartialAsync("~/Views/Shared/Partials/LeagueEdit_New.cshtml",Model.LeagueObject)*@
+
+    <partial name="~/Views/Shared/Partials/LeagueEdit_New.cshtml" model="Model.LeagueObject" />
+    <br />
+    @*@Html.PartialAsync("~/Views/Shared/Partials/NewTeamEdit_New.cshtml",Model.TeamObject)*@
+
+    <partial name="~/Views/Shared/Partials/NewTeamEdit_New.cshtml" model="Model.LeagueObject"/>
+}
+

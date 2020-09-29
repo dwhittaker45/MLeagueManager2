@@ -1,0 +1,35 @@
+﻿@using MLeagueManager2.Common;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model NewUserModel;
+
+<div class="text-center">
+    <h1 class="display-4">Magic League Manager</h1>
+    <h3 class="display-4">Create new user</h3>
+    <p>Please Log In</p>
+
+    @using (Html.BeginForm("CreateUser", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <br />
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="font: bold 13px arial">User Name:</td>
+                <td>@Html.TextBoxFor(m => m.uname)</td>
+            </tr>
+            <tr>
+                <td style="font: bold 13px arial">Password:</td>
+                <td>@Html.TextBoxFor(m => m.pword)</td>
+            </tr>
+            <tr>
+                <td style="font: bold 13px arial">Email:</td>
+                <td>@Html.TextBoxFor(m => m.email)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" id="btnLogin" class="btn-primary">Create User</button> </td>
+            </tr>
+        </table>
+}
+</div>

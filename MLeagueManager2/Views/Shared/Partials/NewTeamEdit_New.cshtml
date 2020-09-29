@@ -1,0 +1,23 @@
+﻿@model MLeagueManager2.Common.Models.NewTeam
+
+<h4>New Team</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TName" class="control-label"></label>
+                <input asp-for="TName" class="form-control" />
+                <span asp-validation-for="TName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ManagerID" class="control-label"></label>
+                <input asp-for="ManagerID" class="form-control" />
+                <span asp-validation-for="ManagerID" class="text-danger"></span>
+            </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
