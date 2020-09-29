@@ -8,6 +8,7 @@ using MLeagueManager2.Service.Services;
 using MLeagueManager2.Service.Interfaces;
 using MLeagueManager2.Common;
 using MLeagueManager2.Repo.magicleague;
+using MLeagueManager2.Common.Models;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 
@@ -51,7 +52,12 @@ namespace MLeagueManager2.Web.Controllers
             {
                 CreateLeagueModel nLeague = new CreateLeagueModel();
 
+                NewTeam nTeam = new NewTeam();
+
+                nTeam.ManagerID = mUser.UserId;
+
                 nLeague.UserObject = mUser;
+                nLeague.TeamObject = nTeam;
 
                 return View(nLeague);
             }
